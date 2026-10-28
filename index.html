@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Artigo enciclopédico sobre Urbanização: conceito, contexto histórico, imagens e referências.">
+  <title>Urbanização WikiUrban</title>
+  <style>
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --azul: #3366cc;
+      --azul-escuro: #2a4b8d;
+      --cinza-claro: #f8f9fa;
+      --cinza-borda: #a2a9b1;
+      --cinza-texto: #54595d;
+      --preto: #202122;
+      --fonte-serif: 'Linux Libertine', Georgia, 'Times New Roman', serif;
+      --fonte-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      font-family: var(--fonte-sans);
+      color: var(--preto);
+      background: #fff;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    a { color: var(--azul); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ===== CABEÇALHO ===== */
+    header.site-header {
+      border-bottom: 1px solid var(--cinza-borda);
+      background: #fff;
+      padding: 8px 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-family: var(--fonte-serif);
+      font-size: 26px;
+      font-weight: normal;
+      letter-spacing: 1px;
+      color: var(--preto);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+    .logo span.globo {
+      font-size: 22px;
+      color: var(--azul);
+    }
+    .logo .sub { font-size: 11px; color: var(--cinza-texto); display: block; letter-spacing: 0; }
+
+    .search-form {
+      flex: 1;
+      max-width: 500px;
+      display: flex;
+      border: 1px solid var(--cinza-borda);
+      border-radius: 2px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .search-form input {
+      flex: 1;
+      border: none;
+      padding: 7px 12px;
+      font-size: 14px;
+      outline: none;
+      font-family: var(--fonte-sans);
+    }
+    .search-form button {
+      border: none;
+      border-left: 1px solid var(--cinza-borda);
+      background: var(--cinza-claro);
+      padding: 0 14px;
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--cinza-texto);
+    }
+    .search-form button:hover { background: #eaecf0; }
+
+    nav.top-nav { display: flex; gap: 16px; font-size: 14px; flex-wrap: wrap; }
+    nav.top-nav a { color: var(--cinza-texto); }
+
+    /* ===== LAYOUT ===== */
+    .layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      max-width: 1300px;
+      margin: 0 auto;
+      gap: 24px;
+      padding: 20px;
+    }
+
+    /* ===== SIDEBAR (SUMÁRIO) ===== */
+    aside.sidebar {
+      font-size: 13px;
+      position: sticky;
+      top: 70px;
+      align-self: start;
+      max-height: calc(100vh - 90px);
+      overflow-y: auto;
+    }
+    aside.sidebar h2 {
+      font-size: 13px;
+      text-transform: uppercase;
+      color: var(--cinza-texto);
+      border-bottom: 1px solid var(--cinza-borda);
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      letter-spacing: .5px;
+    }
+    aside.sidebar ul { list-style: none; }
+    aside.sidebar li { margin: 5px 0; padding-left: 6px; border-left: 2px solid transparent; }
+    aside.sidebar li:hover { border-left-color: var(--azul); }
+    aside.sidebar li.sub { padding-left: 22px; font-size: 12.5px; }
+    aside.sidebar a { color: var(--azul-escuro); }
+
+    /* ===== CONTEÚDO ===== */
+    main.content {
+      font-family: var(--fonte-serif);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--preto);
+      max-width: 900px;
+    }
+    main.content h1 {
+      font-size: 2em;
+      font-weight: normal;
+      border-bottom: 1px solid var(--cinza-borda);
+      padding-bottom: 6px;
+      margin-bottom: 4px;
+      font-family: var(--fonte-serif);
+    }
+    main.content h2 {
+      font-size: 1.5em;
+      font-weight: normal;
+      border-bottom: 1px solid var(--cinza-borda);
+      padding-bottom: 4px;
+      margin: 28px 0 12px;
+      font-family: var(--fonte-serif);
+    }
+    main.content h3 {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin: 20px 0 8px;
+    }
+    main.content p { margin: 12px 0; text-align: justify; }
+    main.content ul, main.content ol { margin: 12px 0 12px 26px; }
+    main.content li { margin: 6px 0; }
+
+    .artigo-info {
+      font-size: 12.5px;
+      color: var(--cinza-texto);
+      font-family: var(--fonte-sans);
+      margin-bottom: 14px;
+    }
+
+    /* ===== FIGURA PRINCIPAL ===== */
+    figure.imagem-destaque {
+      float: right;
+      width: 340px;
+      margin: 0 0 16px 24px;
+      border: 1px solid var(--cinza-borda);
+      background: var(--cinza-claro);
+      padding: 6px;
+      border-radius: 2px;
+      font-family: var(--fonte-sans);
+    }
+    figure.imagem-destaque img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    figure.imagem-destaque figcaption {
+      font-size: 12.5px;
+      line-height: 1.4;
+      padding: 8px 4px 4px;
+      color: var(--preto);
+    }
+    figure.imagem-destaque .creditos {
+      font-size: 11px;
+      color: var(--cinza-texto);
+      margin-top: 4px;
+    }
+
+    /* ===== CAIXA INFORMATIVA (INFOBOX) ===== */
+    .infobox {
+      float: right;
+      clear: right;
+      width: 300px;
+      margin: 0 0 20px 24px;
+      border: 1px solid var(--cinza-borda);
+      background: var(--cinza-claro);
+      font-family: var(--fonte-sans);
+      font-size: 13px;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .infobox h3 {
+      background: #d9e2f3;
+      text-align: center;
+      padding: 8px;
+      font-size: 15px;
+      margin: 0;
+      border-bottom: 1px solid var(--cinza-borda);
+    }
+    .infobox table { width: 100%; border-collapse: collapse; }
+    .infobox th, .infobox td {
+      padding: 6px 10px;
+      text-align: left;
+      vertical-align: top;
+      border-top: 1px solid #eaecf0;
+    }
+    .infobox th { width: 40%; color: var(--cinza-texto); font-weight: bold; }
+
+    /* ===== IMAGENS SECUNDÁRIAS ===== */
+    figure.mini {
+      float: left;
+      width: 260px;
+      margin: 6px 20px 12px 0;
+      border: 1px solid var(--cinza-borda);
+      background: var(--cinza-claro);
+      padding: 5px;
+      font-family: var(--fonte-sans);
+    }
+    figure.mini img { width: 100%; height: auto; display: block; }
+    figure.mini figcaption {
+      font-size: 12px;
+      padding: 6px 3px 2px;
+      line-height: 1.35;
+      color: var(--preto);
+    }
+
+    /* ===== REFERÊNCIAS ===== */
+    .referencias { font-size: 13.5px; }
+    .referencias ol { margin-left: 22px; }
+    .referencias li { margin: 6px 0; }
+
+    /* ===== CAIXA "VER TAMBÉM" ===== */
+    .ver-tambem {
+      border: 1px solid var(--cinza-borda);
+      background: var(--cinza-claro);
+      padding: 12px 18px;
+      margin: 20px 0;
+      font-family: var(--fonte-sans);
+      font-size: 14px;
+    }
+    .ver-tambem h3 { margin-top: 0; font-size: 15px; }
+    .ver-tambem ul { columns: 2; margin-left: 18px; }
+
+    /* ===== RODAPÉ ===== */
+    footer.site-footer {
+      border-top: 1px solid var(--cinza-borda);
+      margin-top: 40px;
+      padding: 24px 20px;
+      background: var(--cinza-claro);
+      font-size: 12.5px;
+      color: var(--cinza-texto);
+      text-align: center;
+      font-family: var(--fonte-sans);
+    }
+    footer.site-footer a { color: var(--azul-escuro); }
+
+    /* ===== BOTÃO VOLTAR AO TOPO ===== */
+    #topo {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--azul);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+      z-index: 200;
+    }
+    #topo:hover { background: var(--azul-escuro); }
+
+    /* ===== RESPONSIVO ===== */
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; padding: 12px; }
+      aside.sidebar {
+        position: static;
+        max-height: none;
+        order: -1;
+        background: var(--cinza-claro);
+        border: 1px solid var(--cinza-borda);
+        padding: 12px 16px;
+        border-radius: 4px;
+      }
+      figure.imagem-destaque,
+      .infobox,
+      figure.mini {
+        float: none;
+        width: 100%;
+        margin: 16px 0;
+      }
+      .ver-tambem ul { columns: 1; }
+    }
+
+    @media (max-width: 500px) {
+      header.site-header { padding: 8px 12px; gap: 10px; }
+      .logo { font-size: 22px; }
+      .search-form { order: 3; width: 100%; max-width: 100%; }
+      main.content h1 { font-size: 1.6em; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ================= CABEÇALHO ================= -->
+<header class="site-header">
+  <div class="logo">
+    <span class="globo">🌐</span>
+    <div>
+      WikiUrban
+      <span class="sub">A enciclopédia urbana livre</span>
+    </div>
+  </div>
+
+  <form class="search-form" role="search" onsubmit="event.preventDefault(); alert('Pesquisa simulada: ' + this.q.value);">
+    <input type="search" name="q" placeholder="Pesquisar na WikiUrban..." aria-label="Pesquisar">
+    <button type="submit" aria-label="Buscar">🔍</button>
+  </form>
+
+  <nav class="top-nav">
+    <a href="#conceito">Conceito</a>
+    <a href="#historico">História</a>
+    <a href="#referencias">Referências</a>
+  </nav>
+</header>
+
+<!-- ================= LAYOUT PRINCIPAL ================= -->
+<div class="layout">
+
+  <!-- ===== SIDEBAR / SUMÁRIO ===== -->
+  <aside class="sidebar">
+    <h2>Conteúdo</h2>
+    <ul>
+      <li><a href="#topo-artigo">Início</a></li>
+      <li><a href="#conceito">1. Conceito</a></li>
+      <li class="sub"><a href="#indicadores">1.1 Indicadores</a></li>
+      <li class="sub"><a href="#industrializacao">1.2 Urbanização e industrialização</a></li>
+      <li><a href="#historico">2. Contexto histórico</a></li>
+      <li class="sub"><a href="#antiguidade">2.1 Antiguidade</a></li>
+      <li class="sub"><a href="#revolucao">2.2 Revolução Industrial</a></li>
+      <li class="sub"><a href="#seculo-xx">2.3 Século XX</a></li>
+      <li class="sub"><a href="#brasil">2.4 Urbanização no Brasil</a></li>
+      <li class="sub"><a href="#desafios">2.5 Desafios contemporâneos</a></li>
+      <li><a href="#ver-tambem">3. Ver também</a></li>
+      <li><a href="#referencias">4. Referências</a></li>
+      <li><a href="#ligacoes">5. Ligações externas</a></li>
+    </ul>
+  </aside>
+
+  <!-- ===== CONTEÚDO ===== -->
+  <main class="content" id="topo-artigo">
+    <h1>Urbanização</h1>
+    <p class="artigo-info">Origem: WikiUrban, a enciclopédia urbana livre.</p>
+
+    <!-- Imagem principal -->
+    <figure class="imagem-destaque">
+      <img
+        src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=680&q=80"
+        alt="Vista aérea de uma grande metrópole com arranha-céus ao anoitecer"
+        loading="lazy">
+      <figcaption>
+        <strong>Vista aérea de uma metrópole contemporânea.</strong>
+        A concentração populacional e a verticalização são marcas do processo de urbanização acelerada.
+        <div class="creditos">Foto: Unsplash (domínio público criativo) – ilustrativa.</div>
+      </figcaption>
+    </figure>
+
+    <!-- Infobox lateral -->
+    <div class="infobox">
+      <h3>Urbanização</h3>
+      <table>
+        <tr><th>Definição</th><td>Processo de crescimento da população urbana em relação à rural</td></tr>
+        <tr><th>Início</th><td>Antiguidade (cidades-Estado)</td></tr>
+        <tr><th>Auge</th><td>Revolução Industrial (séc. XVIII–XIX)</td></tr>
+        <tr><th>Indicador</th><td>Taxa de urbanização (%)</td></tr>
+        <tr><th>População urbana mundial</th><td>≈ 57% (ONU, 2022)</td></tr>
+        <tr><th>Previsão (2050)</th><td>≈ 68% da população mundial</td></tr>
+        <tr><th>Brasil</th><td>≈ 87% urbana (IBGE, 2022)</td></tr>
+      </table>
+    </div>
+
+    <p>
+      <strong>Urbanização</strong> é o processo pelo qual a população urbana cresce em proporção
+      maior do que a população rural, acompanhado da expansão física das cidades e da transformação
+      das relações sociais, econômicas e ambientais no território. Trata-se de um fenômeno histórico
+      e multidimensional, que articula industrialização, êxodo rural, políticas públicas e dinâmicas
+      demográficas.
+    </p>
+
+    <!-- ===== 1. CONCEITO ===== -->
+    <h2 id="conceito">1. Conceito</h2>
+    <p>
+      O conceito de urbanização não se confunde com o simples <em>crescimento urbano</em>: enquanto
+      o segundo designa o aumento absoluto da população ou da área das cidades, a urbanização refere-se
+      à <strong>mudança na proporção</strong> entre população urbana e rural, além da difusão de modos
+      de vida, valores e infraestruturas tipicamente urbanos pelo conjunto da sociedade.
+    </p>
+    <p>
+      Segundo o geógrafo brasileiro <strong>Milton Santos</strong>, a urbanização é um processo social
+      que só pode ser compreendido em relação ao desenvolvimento do capitalismo, à divisão territorial
+      do trabalho e à modernização técnica do território. Para a demografia, mede-se principalmente
+      pela <em>taxa de urbanização</em> — percentual da população total que reside em áreas urbanas.
+    </p>
+
+    <h3 id="indicadores">1.1 Indicadores</h3>
+    <ul>
+      <li><strong>Taxa de urbanização:</strong> proporção da população urbana sobre o total.</li>
+      <li><strong>Êxodo rural:</strong> migração do campo para a cidade.</li>
+      <li><strong>Densidade demográfica urbana:</strong> habitantes por km² nas cidades.</li>
+      <li><strong>Taxa de metropolização:</strong> crescimento das regiões metropolitanas.</li>
+      <li><strong>Índice de qualidade de vida urbana:</strong> acesso a saneamento, mobilidade e moradia.</li>
+    </ul>
+
+    <h3 id="industrializacao">1.2 Urbanização e industrialização</h3>
+    <p>
+      Historicamente, a urbanização moderna está fortemente associada à industrialização. A instalação
+      de fábricas nas cidades atraiu grandes contingentes de trabalhadores, gerando rápida expansão
+      urbana a partir do século XVIII na Europa e, mais tarde, nos países periféricos. Em países como
+      o Brasil, porém, a urbanização ocorreu de forma <strong>acelerada e desordenada</strong>, muitas
+      vezes sem correspondência com o desenvolvimento industrial pleno, produzindo periferização e
+      desigualdades socioespaciais.
+    </p>
+
+    <!-- ===== 2. CONTEXTO HISTÓRICO ===== -->
+    <h2 id="historico">2. Contexto histórico</h2>
+
+    <h3 id="antiguidade">2.1 Urbanização na Antiguidade</h3>
+    <figure class="mini">
+      <img
+        src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=520&q=80"
+        alt="Ruínas romanas do Coliseu, exemplo de urbanização antiga"
+        loading="lazy">
+      <figcaption>Ruínas romanas: Roma chegou a abrigar mais de 1 milhão de habitantes no séc. II d.C.</figcaption>
+    </figure>
+    <p>
+      As primeiras cidades surgiram na <strong>Mesopotâmia</strong>, por volta de 3500 a.C., ligadas à
+      agricultura irrigada e ao excedente agrícola. Ur, Uruk e Babilônia foram centros urbanos com
+      muralhas, templos e mercados. Na Grécia Antiga, a <em>pólis</em> organizou a vida política e
+      cultural, enquanto Roma desenvolveu infraestrutura notável — aquedutos, estradas e o
+      <em>forum</em> —, chegando a abrigar mais de um milhão de habitantes no auge do Império.
+    </p>
+
+    <h3 id="revolucao">2.2 Revolução Industrial e o boom urbano</h3>
+    <p>
+      A partir de meados do século XVIII, na Inglaterra, a <strong>Revolução Industrial</strong>
+      transformou radicalmente o espaço urbano. Cidades como Manchester e Londres cresceram
+      exponencialmente com a migração de camponeses atraídos pelo trabalho fabril. Em 1800, cerca de
+      3% da população mundial vivia em cidades; em 1900, esse número já passava de 13%. As condições
+      de vida nas primeiras cidades industriais eram precárias — cortiços, poluição e jornadas
+      extenuantes —, o que motivou o surgimento do urbanismo moderno e das primeiras legislações
+      sanitárias.
+    </p>
+
+    <h3 id="seculo-xx">2.3 Urbanização no século XX</h3>
+    <figure class="mini">
+      <img
+        src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=520&q=80"
+        alt="Skyline de metrópole moderna com arranha-céus"
+        loading="lazy">
+      <figcaption>Metrópoles do século XX: verticalização e conurbação marcam a paisagem urbana.</figcaption>
+    </figure>
+    <p>
+      O século XX foi o século da urbanização em massa. Nos países desenvolvidos, a suburbanização e
+      a construção de infraestruturas viárias redefiniram as cidades. Nos países em desenvolvimento,
+      a urbanização acelerou-se após a Segunda Guerra Mundial, impulsionada pela descolonização,
+      pela industrialização tardia e pelo crescimento demográfico. Foi nesse período que se
+      consolidaram os conceitos de <strong>metrópole</strong>, <strong>conurbação</strong> e
+      <strong>megacidade</strong> — cidades com mais de 10 milhões de habitantes.
+    </p>
+
+    <h3 id="brasil">2.4 Urbanização no Brasil</h3>
+    <p>
+      No Brasil, a urbanização tornou-se intensa a partir de <strong>1950</strong>, quando a
+      industrialização atraiu milhões de migrantes do Nordeste e do interior para o Sudeste. Em 1960,
+      a população urbana já superava a rural. O processo foi marcado por:
+    </p>
+    <ul>
+      <li>Forte <strong>êxodo rural</strong> e migração inter-regional;</li>
+      <li>Crescimento acelerado das <strong>periferias</strong> e das favelas;</li>
+      <li>Metropolização de São Paulo e Rio de Janeiro;</li>
+      <li>Expansão recente das cidades médias do interior.</li>
+    </ul>
+    <p>
+      Segundo o IBGE (Censo 2022), cerca de <strong>87%</strong> da população brasileira vive em áreas
+      urbanas, uma das maiores taxas do mundo.
+    </p>
+
+    <h3 id="desafios">2.5 Desafios contemporâneos</h3>
+    <p>
+      A urbanização contemporânea coloca desafios complexos: <strong>favelização</strong>,
+      <strong>mobilidade urbana</strong> insuficiente, <strong>segregação socioespacial</strong>,
+      pressão sobre recursos hídricos, ilhas de calor e emissões de gases de efeito estufa. A
+      ONU-Habitat estima que cerca de 1,1 bilhão de pessoas vivam em assentamentos informais. O
+      debate atual gira em torno da <em>urbanização sustentável</em>, do direito à cidade e dos
+      Objetivos de Desenvolvimento Sustentável (ODS 11).
+    </p>
+
+    <!-- ===== 3. VER TAMBÉM ===== -->
+    <div class="ver-tambem" id="ver-tambem">
+      <h3>3. Ver também</h3>
+      <ul>
+        <li><a href="#">Êxodo rural</a></li>
+        <li><a href="#">Metropolização</a></li>
+        <li><a href="#">Conurbação</a></li>
+        <li><a href="#">Favelização</a></li>
+        <li><a href="#">Direito à cidade</a></li>
+        <li><a href="#">Urbanismo</a></li>
+        <li><a href="#">Milton Santos</a></li>
+        <li><a href="#">ONU-Habitat</a></li>
+      </ul>
+    </div>
+
+    <!-- ===== 4. REFERÊNCIAS ===== -->
+    <h2 id="referencias">4. Referências</h2>
+    <div class="referencias">
+      <ol>
+        <li>SANTOS, Milton. <em>A urbanização brasileira</em>. 5. ed. São Paulo: Edusp, 2005.</li>
+        <li>CASTELLS, Manuel. <em>A questão urbana</em>. São Paulo: Paz e Terra, 2000.</li>
+        <li>INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA (IBGE). <em>Censo Demográfico 2022</em>. Rio de Janeiro: IBGE, 2023.</li>
+        <li>ORGANIZAÇÃO DAS NAÇÕES UNIDAS (ONU). <em>World Urbanization Prospects: The 2018 Revision</em>. Nova York: ONU, 2019.</li>
+        <li>ONU-HABITAT. <em>World Cities Report 2022: Envisioning the Future of Cities</em>. Nairóbi, 2022.</li>
+        <li>DAVIS, Mike. <em>Planeta Favela</em>. São Paulo: Boitempo, 2006.</li>
+      </ol>
+    </div>
+
+    <!-- ===== 5. LIGAÇÕES EXTERNAS ===== -->
+    <h2 id="ligacoes">5. Ligações externas</h2>
+    <ul>
+      <li><a href="https://www.ibge.gov.br" target="_blank" rel="noopener">IBGE – Instituto Brasileiro de Geografia e Estatística</a></li>
+      <li><a href="https://unhabitat.org" target="_blank" rel="noopener">ONU-Habitat</a></li>
+      <li><a href="https://www.un.org/development/desa/pd/" target="_blank" rel="noopener">ONU – Divisão de População</a></li>
+    </ul>
+  </main>
+</div>
+
+<!-- ================= RODAPÉ ================= -->
+<footer class="site-footer">
+  <p>Este artigo é um exemplo educacional no estilo wiki. Conteúdo baseado em fontes públicas.</p>
+  <p>
+    <a href="#">Política de privacidade</a> ·
+    <a href="#">Sobre a WikiUrban</a> ·
+    <a href="#">Termos de uso</a> ·
+    <a href="#">Contato</a>
+  </p>
+  <p>&copy; 2026 WikiUrban Conteúdo demonstrativo.</p>
+</footer>
+
+<!-- Botão voltar ao topo -->
+<button id="topo" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
+
+<script>
+  // Botão "voltar ao topo"
+  const btnTopo = document.getElementById('topo');
+  window.addEventListener('scroll', () => {
+    btnTopo.style.display = window.scrollY > 400 ? 'block' : 'none';
+  });
+  btnTopo.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Rolagem suave para âncoras do sumário
+  document.querySelectorAll('aside.sidebar a, nav.top-nav a').forEach(link => {
+    link.addEventListener('click', e => {
+      const id = link.getAttribute('href');
+      if (id.startsWith('#')) {
+        const el = document.querySelector(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+</script>
+</body>
+</html>
